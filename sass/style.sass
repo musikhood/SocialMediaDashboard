@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
+@import "slider"
+*
+    font-size: 14px
+    font-family: Inter
+    font-weight: bold
+html
+    --bgDarkBlue: hsl(230, 17%, 14%)
+    --veryDarkBlue: hsl(232, 19%, 17%)
+    --darkDesaturatedBlue: hsl(228,28%,20%)
+    --desaturatedBlue: hsl(228,34%,66%)
+    --textWhite: hsl(0,0%,100%)
+
+    --bgWhite: hsl(0,0%,100%)
+    --veryPaleBlue: hsl(225, 100%, 98%)
+    --lightGrayishBlue: hsl(227, 47%, 96%)
+    --darkGrayishBlue: hsl(228, 12%, 44%)
+    --textVeryDarkBlue: hsl(230, 17%, 14%)
+body
+    background-color: var(--bgDarkBlue)
+    color: var(--textWhite)
+    padding: 15px
+    margin: 0
+    box-sizing: border-box
+
+.header
+    display: flex
+    flex-direction: column
+    z-index: 100
+    @media (min-width: 376px)
+        width: 1200px
+        margin: 0 auto
+        flex-direction: row
+        justify-content: space-between
+    &::before
+        content: ""
+        display: block
+        height: 250px
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        background-color: var(--veryDarkBlue)
+        border-bottom-left-radius: 20px
+        border-bottom-right-radius: 20px
+        z-index: -1
+
+    &__h1
+        font-size: 1.4rem
+    &__p
+        color: var(--desaturatedBlue)
+        margin-bottom: 30px
+    &__hr
+        color: var(--desaturatedBlue)
+        @media (min-width: 376px)
+            display: none
+    &__dark-mode
+        display: flex
+        justify-content: space-between
+        align-items: center
+.switch
+    transform: translateY(-5px)
+    @media (min-width: 376px)
+        transform: translateY(-25%)
+        margin-left: 10px
+.section
+    margin-top: 20px
+    display: grid
+    grid-template-areas: "one""two""three""four"
+    gap: 2rem
+    @media (min-width: 376px)
+        width: 1200px
+        margin: 20px auto 0 auto
+        grid-template-areas: "one two three four"
+        grid-template-columns: 1fr 1fr 1fr 1fr
+    &__article
+        background-color: var(--darkDesaturatedBlue)
+        padding: 10px
+        position: relative
+        border-radius: 5px
+        overflow: hidden
+        &--facebook
+            grid-area: one
+        &--twitter
+            grid-area: two
+        &--instagram
+            grid-area: three
+        &--youtube
+            grid-area: four
+        &::after
+            content: ""
+            display: block
+            position: absolute
+            width: 100%
+            height: 4px
+            top: 0
+            left: 0
+        &--facebook::after
+            background-color: hsl(208, 92%, 53%)
+        &--twitter::after
+            background-color: hsl(203, 89%, 53%)
+        &--instagram::after
+            background-image: linear-gradient(to right,hsl(37, 97%, 70%), hsl(329, 70%, 58%))
+        &--youtube::after
+            background-color: hsl(348, 97%, 39%)
+
+    &__platform
+        display: flex
+        align-items: center
+        justify-content: center
+    &__p
+        color: var(--desaturatedBlue)
+        &--followers
+            font-weight: normal
+            letter-spacing: 4px
+        &--new-followers
+            &.green
+                color: hsl(163, 72%, 41%)
+            &.red
+                color: hsl(356, 69%, 56%)
+    &__img
+        height: 100%
+        margin-right: 10px
+    &__followers
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__h1
+        font-size: 4rem
+        margin: 0
+    &__new-followers
+        display: flex
+        justify-content: center
+        align-items: center
