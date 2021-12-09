@@ -11,17 +11,17 @@ html
     --desaturatedBlue: hsl(228,34%,66%)
     --textWhite: hsl(0,0%,100%)
 
-    --bgWhite: hsl(0,0%,100%)
-    --veryPaleBlue: hsl(225, 100%, 98%)
-    --lightGrayishBlue: hsl(227, 47%, 96%)
-    --darkGrayishBlue: hsl(228, 12%, 44%)
-    --textVeryDarkBlue: hsl(230, 17%, 14%)
 body
     background-color: var(--bgDarkBlue)
     color: var(--textWhite)
     padding: 15px
     margin: 0
     box-sizing: border-box
+    @media (min-width: 376px)
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100vh
 
 .header
     display: flex
@@ -132,3 +132,71 @@ body
         display: flex
         justify-content: center
         align-items: center
+.overview
+    font-size: 1.7rem
+
+.article
+    display: grid
+    grid-template-areas: "one""two""three""four""five""six""seven""eight"
+    gap: 2rem
+    @media (min-width: 376px)
+        grid-template-areas: "one two three four""five six seven eight"
+        width: 1200px
+        margin: 0 auto
+    &__div
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background-color: var(--darkDesaturatedBlue)
+        padding: 20px
+        height: 100px
+        @media (min-width: 376px)
+            width: 239px
+        &--facebook-views
+            grid-area: one
+        &--facebook-likes
+            grid-area: two
+        &--instagram-likes
+            grid-area: three
+        &--instagram-views
+            grid-area: four
+        &--retweets
+            grid-area: five
+        &--twitter-likes
+            grid-area: six
+        &--youtube-likes
+            grid-area: seven
+        &--youtube-views
+            grid-area: eight
+    &__num
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+    &__stats
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+    &__img-wrapper
+        display: flex
+        align-items: center
+
+    &__img
+        margin-right: 5px
+    &__image
+        height: 30px
+        width: 30px
+        margin-left: auto
+    &__p
+        color: var(--desaturatedBlue)
+        margin-top: 10px
+        &--green
+            color: hsl(163, 72%, 41%)
+            margin: 0
+        &--red
+            color: hsl(356, 69%, 56%)
+            margin: 0
+    &__h1
+        font-size: 3rem
+        margin: 0
