@@ -10,6 +10,7 @@ html
     --bgtile: hsl(228,28%,20%)
     --graytext: hsl(228,34%,66%)
     --text: hsl(0,0%,100%)
+    --hover: hsl(228,28%,25%)
 
 body
     background-color: var(--bg1)
@@ -79,6 +80,9 @@ body
         position: relative
         border-radius: 5px
         overflow: hidden
+        cursor: pointer
+        &:hover
+            background-color: var(--hover)
         &--facebook
             grid-area: one
         &--twitter
@@ -150,6 +154,9 @@ body
         background-color: var(--bgtile)
         padding: 20px
         height: 100px
+        cursor: pointer
+        &:hover
+            background-color: var(--hover)
         @media (min-width: 476px)
             width: 239px
         &--facebook-views

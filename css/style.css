@@ -25,25 +25,25 @@
   transition: .4s;
 }
 
+.slider.active {
+  background-image: none;
+  background-color: #aeb3cb;
+}
+
+.slider.active::before {
+  background-color: white;
+}
+
 .slider::before {
   position: absolute;
   content: "";
   height: 20px;
   width: 20px;
   left: 4px;
-  bottom: 4px;
+  bottom: 5px;
   background-color: #1e202a;
   -webkit-transition: .4s;
   transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #2196f3;
-          box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider::before {
@@ -71,6 +71,7 @@ html {
   --bgtile: hsl(228,28%,20%);
   --graytext: hsl(228,34%,66%);
   --text: hsl(0,0%,100%);
+  --hover: hsl(228,28%,25%);
 }
 
 body {
@@ -204,6 +205,11 @@ body {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.section__article:hover {
+  background-color: var(--hover);
 }
 
 .section__article--facebook {
@@ -353,6 +359,11 @@ body {
   background-color: var(--bgtile);
   padding: 20px;
   height: 100px;
+  cursor: pointer;
+}
+
+.article__div:hover {
+  background-color: var(--hover);
 }
 
 @media (min-width: 476px) {
